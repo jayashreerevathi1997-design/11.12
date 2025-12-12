@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+    #area {
+      width: 300px;
+      height: 150px;
+      background-color: lightblue;
+      border: 2px solid navy;
+      text-align: center;
+      line-height: 150px;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  
+   /* Fullscreen loader */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Spinner animation */
+    .spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+ @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Hide loader when page is loaded */
+    body.loaded #loader {
+      display: none;
+    }
+
+</style>
+</head>
+<!-- <body>
+    <button id="myBtn">Click Me</button>
+
+  <script>
+    const btn = document.getElementById("myBtn");
+
+    btn.addEventListener("click", function() {
+      // Change the button text
+      btn.textContent = "You Clicked Me!";
+    });
+  </script>
+
+  <h2>Hover over the box below:</h2>
+  <div id="area">Move your mouse here</div>
+
+  <script>
+    // Select the area element
+    const area = document.getElementById("area");
+
+    // Add event listener for mouseenter
+    area.addEventListener("mouseenter", function() {
+      alert("Mouse entered the area!");
+    });
+  </script>
+  <h2>Press Enter in the input box:</h2>
+  <input type="text" id="myInput" placeholder="Type something and press Enter">
+
+  <script>
+    const input = document.getElementById("myInput");
+
+    // Listen for keydown event
+    input.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        alert("You pressed Enter!");
+      }
+    }); -->
+  <!-- <body>
+  <h2>Click the button to change background color:</h2>
+  <button id="colorBtn">Change Color</button>
+
+  <script>
+    const btn = document.getElementById("colorBtn");
+
+    btn.addEventListener("click", function() {
+      // Change background color
+      document.body.style.backgroundColor = "lightgreen";
+    });
+  </script> -->
+<!--  <h2>Toggle Password Field</h2>
+
+  <input type="password" id="passwordField" placeholder="Enter your password">
+  <button id="toggleBtn">Show Password</button>
+
+  <script>
+    const passwordField = document.getElementById("passwordField");
+    const toggleBtn = document.getElementById("toggleBtn");
+
+    toggleBtn.addEventListener("click", function() {
+      if (passwordField.type === "password") {
+        passwordField.type = "text";          // show password
+        toggleBtn.textContent = "Hide Password"; // update button text
+      } else {
+        passwordField.type = "password";      // hide password
+        toggleBtn.textContent = "Show Password"; // update button text
+      }
+    });
+  </script>
+<h2>Move your mouse around the page:</h2>
+  <p id="coords">Coordinates: (x, y)</p>
+
+  <script>
+    const coords = document.getElementById("coords");
+
+    // Listen for mouse movement
+    document.addEventListener("mousemove", function(event) {
+      // Get mouse coordinates
+      const x = event.clientX;
+      const y = event.clientY;
+
+      // Display coordinates
+      coords.textContent = `Coordinates: (${x}, ${y})`;
+    });
+  </script>
+<h2>Form Demo</h2>
+
+  <form id="myForm">
+    <label>
+      Name:
+      <input type="text" id="name" required>
+    </label>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(event) {
+      // Prevent default page reload
+      event.preventDefault();
+
+      // Custom behavior instead of reload
+      const nameValue = document.getElementById("name").value;
+      message.textContent = `Form submitted! Hello, ${nameValue}`;
+    });
+  </script>
+ <h2>Click Counter Demo</h2>
+  <button id="clickBtn">Click Me</button>
+  <p>Button clicked: <span id="count">0</span> times</p>
+
+  <script>
+    const btn = document.getElementById("clickBtn");
+    const countSpan = document.getElementById("count");
+
+    let count = 0; // initial count
+
+    btn.addEventListener("click", function() {
+      count++; // increment count
+      countSpan.textContent = count; // update display
+    });
+  </script>
+ <h2>Click the button to make it disappear:</h2>
+  <button id="myBtn">Click Me</button>
+
+  <script>
+    const btn = document.getElementById("myBtn");
+
+    btn.addEventListener("click", function() {
+      // Hide the button when clicked
+      btn.style.display = "none";
+    });
+  </script> -->
+<!-- <h2>Click the button to toggle the box:</h2>
+  <button id="toggleBtn">Toggle Box</button>
+
+  <div id="myBox">Hello, I’m visible!</div> 
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const myBox = document.getElementById("myBox");
+
+    toggleBtn.addEventListener("click", function() {
+      if (myBox.style.display === "none") {
+        myBox.style.display = "block"; // show element
+      } else {
+        myBox.style.display = "none";  // hide element
+      }
+    });
+  </script>
+  <button id="playBtn">Click Me!</button>
+
+  <!-- Audio element -->
+ <!--  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script>
+    // Get references
+    const button = document.getElementById("playBtn");
+    const sound = document.getElementById("clickSound");
+
+    // Play sound on button click
+    button.addEventListener("click", () => {
+      sound.currentTime = 0; // reset to start for repeated clicks
+      sound.play();
+    });
+  </script>
+ <!-- Loader -->
+<!--   <div id="loader">
+    <div class="spinner"></div>
+  </div> -->
+
+  <!-- Page content -->
+<!--   <h1>Welcome to My Page</h1>
+  <p>This content shows after the loader disappears.</p>
+
+  <script>
+    // Wait until page fully loads
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script> -->
+ <!-- Image -->
+<!--   <img id="myImage" src="../gallery/cartoon man 2.webp" alt="First Image" width="300">
+
+  <!-- Button -->
+<!--   <button id="changeBtn">Change Image</button>
+
+  <script>
+    // Get references
+    const button = document.getElementById("changeBtn");
+    const image = document.getElementById("myImage");
+
+    // Change image on button click
+    button.addEventListener("click", () => {
+      image.src = "../gallery/cartoon women 4.webp"; // replace with your second image path
+    });
+  </script> --> -->
+
+<!-- <button id="colorBtn">Double‑Click Me!</button>
+
+  <script>
+    // Get reference to button
+    const button = document.getElementById("colorBtn");
+
+    // Handle double‑click event
+    button.addEventListener("dblclick", () => {
+      document.body.style.backgroundColor = "lightblue"; // change color
+    });
+  </script>
+ -->
+<!--   <input type="text" id="myInput" placeholder="Type something and press Enter">
+
+  <script>
+    // Get reference to input field
+    const input = document.getElementById("myInput");
+
+    // Listen for keydown event
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        alert("You pressed Enter! Value: " + input.value);
+      }
+    });
+  </script> --> --> -->
+  <!-- Box -->
+<!--   <div id="box">Hover over me</div>
+
+  <!-- Message area -->
+ <!--  <div id="message"></div>
+
+  <script>
+    const box = document.getElementById("box");
+    const message = document.getElementById("message");
+
+    // Mouse enters the box
+    box.addEventListener("mouseenter", () => {
+      message.textContent = "Mouse entered the box!";
+    });
+
+    // Mouse leaves the box
+    box.addEventListener("mouseleave", () => {
+      message.textContent = "Mouse left the box!";
+    });
+  </script> -->
+ <!-- <h2>Press any key to see it logged!</h2>
+
+  <script>
+    // Listen for keydown events
+    document.addEventListener("keydown", (event) => {
+      console.log("Key pressed:", event.key);
+    });
+      document.body.innerHTML = "You pressed: " + event.key;
+  </script> -->
+   <h2>Right-click Alert Demo</h2>
+  <p>Right-click anywhere on this page to trigger an alert.</p>
+
+  <script>
+    // Listen for right-click (contextmenu) events
+    document.addEventListener('contextmenu', function (e) {
+      alert('Right-click detected!');
+      // Optional: prevent the default browser context menu
+      // e.preventDefault();
+    });
+  </script> -->
+
+<h2>Form Submission Demo</h2>
+
+  <form id="myForm">
+    <label>
+      Name:
+      <input type="text" name="name" required>
+    </label>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Select the form
+    const form = document.getElementById('myForm');
+
+    // Add submit event listener
+    form.addEventListener('submit', function (e) {
+      // Prevent the form from submitting
+      e.preventDefault();
+
+      // Show a message instead
+      alert('Form submission disabled using event.preventDefault()!');
+    });
+  </script>
+ <h2>Form Validation on Blur</h2>
+
+  <form id="myForm">
+    <label>
+      Username:
+      <input type="text" id="username" name="username">
+      <span id="usernameError" class="error"></span>
+    </label>
+
+    <label>
+      Email:
+      <input type="email" id="email" name="email">
+      <span id="emailError" class="error"></span>
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Validate username when it loses focus
+    document.getElementById('username').addEventListener('blur', function () {
+      const errorSpan = document.getElementById('usernameError');
+      if (this.value.trim() === '') {
+        errorSpan.textContent = 'Username is required.';
+      } else {
+        errorSpan.textContent = '';
+      }
+    });
+  // Validate email when it loses focus
+    document.getElementById('email').addEventListener('blur', function () {
+      const errorSpan = document.getElementById('emailError');
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+      if (!emailPattern.test(this.value)) {
+        errorSpan.textContent = 'Enter a valid email address.';
+      } else {
+        errorSpan.textContent = '';
+      }
+    });
+
+    // Prevent form submission if errors exist
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Form submitted (validation runs only on blur).');
+    });
+  </script>
+
+</body>
+</html>
